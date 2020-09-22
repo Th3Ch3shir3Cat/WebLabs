@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<div th:fragment = "categoryBook">
+    <table class = "table">
+        <thead>
+        <tr>
+            <th style = "width: 55%">Изображение</th>
+            <th style = "width: 40%">Наименование</th>
+
+            <th style="width: 5%">Ред.</th>
+            <th style="width: 5%">Удалить</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each = "category : ${categorys}">
+            <td>
+                <img th:src="${category.imgPath}"/>
+            </td>
+            <td th:text = "${category.name}">Наименование</td>
+
+            <td style="text-align: center"><a th:href="@{'/editCategory/{id}'(id=${category.id})}">&#10051;</a></td>
+            <td style="text-align: center"><a th:href="@{'/deleteCategory/{id}'(id=${category.id})}">&#10006;</a></td>
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+</html>

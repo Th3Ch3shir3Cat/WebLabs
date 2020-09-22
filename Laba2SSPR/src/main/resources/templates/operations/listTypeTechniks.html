@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<div th:fragment = "typeBook">
+    <table class = "table">
+        <thead>
+        <tr>
+            <th style = "width: 40%">Изображение</th>
+            <th style = "width: 50%">Наименование</th>
+
+            <th style="width: 5%">Ред.</th>
+            <th style="width: 5%">Удалить</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each = "type : ${types}">
+            <td>
+                <img th:src="${type.imgPath}"/>
+            </td>
+            <td><a th:href = "@{'/builderTexhiks/' + ${type.id}}"  th:text = "${type.name}">Наименование</a></td>
+
+            <td style="text-align: center"><a th:href="@{'/editTypeTechnika/{id}'(id=${type.id})}">&#10051;</a></td>
+            <td style="text-align: center"><a th:href="@{'/deleteTypeTech/{id}'(id=${type.id})}">&#10006;</a></td>
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+</html>

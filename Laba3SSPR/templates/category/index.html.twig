@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Категории{% endblock %}
+
+{% block stylesheets %}
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,700&display=swap&subset=cyrillic,cyrillic-ext" rel="stylesheet">
+    <link rel = "stylesheet" href = "/assets/css/bootstrap.min.css">
+    <link rel = "stylesheet" href = "/assets/css/builderTechiks.css">
+{% endblock %}
+
+{% block body %}
+    <h1>Категории техники</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Имя</th>
+                <th>Изображение</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for category in categories %}
+            <tr>
+                <td>{{ category.id }}</td>
+                <td>
+                    <a href = "{{ path('cars_index', {'id': category.id}) }}">{{ category.Name }}</a>
+                </td>
+                <td>
+                    <img src = "{{ category.ImagePath }}"/>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">Записей не найдено</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

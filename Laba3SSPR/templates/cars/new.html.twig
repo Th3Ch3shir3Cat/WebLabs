@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Машины{% endblock %}
+
+{% block stylesheets %}
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,700&display=swap&subset=cyrillic,cyrillic-ext" rel="stylesheet">
+    <link rel = "stylesheet" href = "/assets/css/bootstrap.min.css">
+    <link rel = "stylesheet" href = "/assets/css/builderTechiks.css">
+{% endblock %}
+
+{% block body %}
+    <h1>Создание новой техники</h1>
+
+    {{ include('cars/_form.html.twig') }}
+
+    <a href="{{ path('main') }}">Назад</a>
+{% endblock %}

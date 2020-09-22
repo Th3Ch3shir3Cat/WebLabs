@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Машины{% endblock %}
+
+{% block stylesheets %}
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,700&display=swap&subset=cyrillic,cyrillic-ext" rel="stylesheet">
+    <link rel = "stylesheet" href = "/assets/css/bootstrap.min.css">
+    <link rel = "stylesheet" href = "/assets/css/builderTechiks.css">
+{% endblock %}
+
+{% block body %}
+    <h1>{{car.Name}}</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Изображение</th>
+                <td>
+                    <img src = "{{ car.ImagePath }}"/>
+                </td>
+            </tr>
+            <tr>
+                <th>Дата выпуска</th>
+                <td>{{ car.DataBorn }}</td>
+            </tr>
+            <tr>
+                <th>База</th>
+                <td>{{ car.Baza }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('cars_index', {'id': car.getIdCategory().getId()}) }}">Назад</a>
+
+    <a href="{{ path('cars_edit', {'id': car.id}) }}">Ред.</a>
+
+    {{ include('cars/_delete_form.html.twig') }}
+{% endblock %}

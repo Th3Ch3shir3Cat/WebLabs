@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<div th:fragment = "carBook">
+    <table class = "table">
+        <thead>
+        <tr>
+            <th style = "width: 30%">Изображение</th>
+            <th style = "width: 20%">Наименование</th>
+            <th style = "width: 10%">База</th>
+            <th style = "width: 5%">Год</th>
+            <th style = "width: 25%">Надстройка</th>
+            <th style = "width: 20%">Категория</th>
+
+            <th style="width: 5%">Ред.</th>
+            <th style="width: 5%">Удалить</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each = "car : ${cars}">
+            <td>
+                <img th:src="${car.imgPath}"/>
+            </td>
+            <td th:text = "${car.name}">Наименование</td>
+            <td th:text = "${car.baza}">База</td>
+            <td th:text = "${car.date}" style="text-align: center">Год</td>
+            <td th:text = "${car.nadstroika.name}">Надстройка</td>
+            <td th:text = "${car.category.name}">Надстройка</td>
+
+            <td style="text-align: center"><a th:href="@{'/edit/{id}'(id=${car.id})}">&#10051;</a></td>
+            <td style="text-align: center"><a th:href="@{'/delete/{id}'(id=${car.id})}">&#10006;</a></td>
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+</html>

@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Машины{% endblock %}
+
+{% block stylesheets %}
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,700&display=swap&subset=cyrillic,cyrillic-ext" rel="stylesheet">
+    <link rel = "stylesheet" href = "/assets/css/bootstrap.min.css">
+    <link rel = "stylesheet" href = "/assets/css/builderTechiks.css">
+{% endblock %}
+
+{% block body %}
+
+<section id = "allTransport" class = "allTransport">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="title">
+                    <h2 class="title__main">
+                        Список машин
+                    </h2>
+                </div>
+            </div>
+        </div>
+
+        <table class="table">
+        <thead>
+            <tr>
+                <th>Наименование</th>
+                <th>Изображение</th>
+                <th>Дата выпуска</th>
+                <th>База</th>
+                <th>См.</th>
+                <th>Ред.</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for car in cars %}
+            <tr>
+                <td>{{ car.Name }}</td>
+                <td>
+                    <img src = "{{ car.ImagePath }}"/>
+                </td>
+                <td>{{ car.DataBorn }}</td>
+                <td>{{ car.Baza }}</td>
+                <td>
+                    <a href="{{ path('cars_show', {'id': car.id}) }}">&#128269;</a>
+                </td>
+                <td>
+                    <a href="{{ path('cars_edit', {'id': car.id}) }}">&#128736;</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">Записей не найдено</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('cars_new') }}">Добавить</a>
+    </div>
+</section>
+{% endblock %}

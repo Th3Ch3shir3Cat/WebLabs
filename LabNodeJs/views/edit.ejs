@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Спецтехника22</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,700&display=swap&subset=cyrillic,cyrillic-ext" rel="stylesheet">
+    <link rel = "stylesheet" href = "/css/admin.css">
+    <link rel = "stylesheet" href = "/css/bootstrap.min.css">
+    <!-- Наш файл стилей -->
+</head>
+<body>
+<header id = "header" class = "header">
+    <div class = "container">
+        <div class = "row">
+            <div class="col-lg-3">
+                <img src="/images/logo.png" alt="logo" class="logo">
+            </div>
+            <div class="col-lg-9 ml-auto">
+                <nav>
+                    <ul class = "menu d-flex justify-content-center">
+                        <li class = "menu__item">
+                            <a href = "/">
+                                Главная
+                            </a>
+                        </li>
+                        <li class = "menu__item">
+                            <a href = "#">
+                                О компании
+                            </a>
+                        </li>
+                        <li class = "menu__item">
+                            <a href = "/typeTechnika">
+                                Спецтехника
+                            </a>
+                        </li>
+                        <li class = "menu__item">
+                            <a href = "#">
+                                Прайс-лист
+                            </a>
+                        </li>
+                        <li class = "menu__item">
+                            <a href = "#">
+                                Фотогалерея
+                            </a>
+                        </li>
+                        <li class = "menu__item">
+                            <a href = "#">
+                                Контакты
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section id = "information" class = "information">
+    <div class = "container">
+        <div class="redactor">
+            <div class="row">
+                <div class="col-lg-12">
+                    <form action = "/cars/edit/<%= id %>" method = "post">
+                        <div class="form-group">
+                            <label for="chooseFile">Выберите изображение</label>
+                            <input name = "ImgPath" type="file" class="chooseFile" id="chooseFile">
+                        </div>
+                        <div class="form-group">
+                            <label for="Name">Наименование</label>
+                            <input type="text" class="Name" id="Name" name = "Name" value="<%=Name%>" placeholder="Наименование">
+                        </div>
+                        <div class="form-group">
+                            <label for="DataBorn">Год выпуска</label>
+                            <input type="text" class="DataBorn" id="DataBorn" name = "DataBorn" value="<%= DataBorn%>" placeholder="Год выпуска">
+                        </div>
+                        <div class="form-group">
+                            <label for="Baza">Колесная база</label>
+                            <input type="text" class="Baza" id="Baza" name = "Baza" value="<%= Baza%>" placeholder="Колесная база">
+                        </div>
+                        <div class = "form-row">
+                            <div class="form-group col-md-4">
+                                <label for="NameNad">Надстройка</label>
+                                <select id="NameNad" class="form-control" name = "PK_Nadstroika">
+                                    <option selected>Выберите...</option>
+                                    <% obj.rows.forEach(function (row) { %>
+                                        <option id = "PK_Nadstroika" name = "PK_Nadstroika" value="<%= row.ID%>">
+                                            <%= row.NameNad%>
+                                        </option>
+                                    <% }); %>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3">
+                            <input type="submit" class="btn btn-primary" value = "Сохранить">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id = "feedBack" class = "feedBack">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="title">
+                    <h2 class="title__main yellow">
+                        Обратная связь
+                    </h2>
+                    <p class="title__text">
+                        По всем интересующим вопросам обращатсья по телефону, или оставьте заявку менеджеру
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-10 m-auto">
+                <form action="#" class="form">
+                    <label>
+                        <input type="email" placeholder="Введите email" class = "form__input">
+                    </label>
+                    <button type="submit" class = "form__btn"> ОТПРАВИТЬ</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer id="footer" class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class = "info_block">
+                    <div class="info">
+                        ХАУСТОВ ГЕРБЕРТ
+                        Группа ПИ-62
+                    </div>
+                    <img src = "/images/html5.png" class = "html5" alt = "html5">
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

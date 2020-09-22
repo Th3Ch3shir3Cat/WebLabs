@@ -1,0 +1,130 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Спецтехника22</title>
+    <link rel = "stylesheet" href = "/css/spectechnika.css">
+    <link rel = "stylesheet" href = "/css/bootstrap.min.css">
+    <script src = "jQuery/jquery-3.4.1.min.js"></script>
+    <script src = "jQuery/popper.min.js"></script>
+    <script src = "styles/bootstrap-4.1.2/bootstrap.min.js"></script>
+    <!-- Наш файл стилей -->
+</head>
+<body>
+<header id = "header" class = "header">
+    <div class = "container">
+        <div class = "row">
+            <div class="col-lg-3">
+                <img src="/images/logo.png" alt="logo" class="logo">
+            </div>
+            <div class="col-lg-9 ml-auto">
+                <nav>
+                    <ul class = "menu d-flex justify-content-center">
+                        <li class = "menu__item">
+                            <a th:href="@{/}">
+                                Главная
+                            </a>
+                        </li>
+                        <li class = "menu__item">
+                            <a href = "#">
+                                О компании
+                            </a>
+                        </li>
+                        <li class = "menu__item">
+                            <a href = "/spectechnika">
+                                Спецтехника
+                            </a>
+                        </li>
+                        <li class = "menu__item">
+                            <a href = "#">
+                                Прайс-лист
+                            </a>
+                        </li>
+                        <li class = "menu__item">
+                            <a href = "#">
+                                Фотогалерея
+                            </a>
+                        </li>
+                        <li class = "menu__item">
+                            <a href = "#">
+                                Контакты
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section id = "information" class = "information">
+    <div class = "container">
+
+        <div th:if="${message}">
+            <p th:text = "${message}"/>
+        </div>
+        <div class = "row">
+            <div class = "col-lg-12">
+                <div class="title">
+                    <h2 class="title__main">
+                        Типы спецтехники
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div th:replace="operations/listTypeTechniks :: typeBook"></div>
+        <a th:href="@{'/postTypeTechnika'}">
+            <button type="submit" class = "form__btn"> Добавить</button>
+        </a>
+    </div>
+</section>
+
+<section id = "feedBack" class = "feedBack">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="title">
+                    <h2 class="title__main yellow">
+                        Обратная связь
+                    </h2>
+                    <p class="title__text">
+                        По всем интересующим вопросам обращатсья по телефону, или оставьте заявку менеджеру
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-10 m-auto">
+                <form action="#" class="form">
+                    <label>
+                        <input type="email" placeholder="Введите email" class = "form__input">
+                    </label>
+                    <button type="submit" class = "form__btn"> ОТПРАВИТЬ</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer id="footer" class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class = "info_block">
+                    <div class="info">
+                        ХАУСТОВ ГЕРБЕРТ
+                        Группа ПИ-62
+                    </div>
+                    <img src = "/images/html5.png" class = "html5" alt = "html5">
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

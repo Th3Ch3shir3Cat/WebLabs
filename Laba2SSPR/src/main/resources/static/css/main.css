@@ -1,0 +1,221 @@
+body {
+    font-family: 'Oswald', sans-serif;
+}
+
+ul, li {
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5{
+    font-weight: 700;
+    color: #000;
+}
+
+h2{
+    text-align: center;
+}
+
+h3{
+    font-weight: 400;
+}
+
+.title{
+    padding-top: 100px;
+    padding-bottom: 70px;
+    text-align: center;
+}
+
+.title__main{
+    font-size: 32px;
+}
+
+.title__text{
+    font-size: 20px;
+    width: 780px;
+    margin: 0 auto;
+}
+
+.yellow{
+    color: #fcdb00;
+}
+
+/*Голова*/
+.header{
+    background: #fcdb00;
+    color: #010101;
+    padding-top: 50px;
+    padding-bottom: 105px;
+}
+
+.menu{
+    margin-top: 10px;
+}
+
+.menu__item{
+    margin: 0 10px;
+}
+
+.menu__item a{
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
+}
+
+
+.offer{
+    margin-top: 117px;
+}
+
+.offer__title{
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.offer__intro{
+    font-size: 20px;
+    line-height: 1.3em;
+}
+
+.offer__text{
+    font-size: 16px;
+    margin-top: 15px;
+    color: #555555;
+    width: 400px;
+}
+
+.met{
+    display: block;
+    margin: 40px auto 0;
+}
+
+/*Информация*/
+
+.feature{
+    margin-bottom: 65px;
+}
+
+
+.feature__text{
+    color: #898989;
+}
+
+/*Обратная связь*/
+
+.feedBack{
+    background: #010101;
+    color: #fff;
+}
+
+.form{
+    text-align: center;
+}
+
+.form__input{
+    background: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+    width: 580px;
+    padding: 5px 0;
+    margin-right: 21px;
+    border: 0;
+    padding-left: 23px;
+    outline: none;
+}
+
+.kmd{
+    margin-top: 40px;
+}
+
+.tractor{
+    margin-top: 18px;
+}
+
+
+.kimball{
+    margin-top: 40px;
+}
+.form__btn{
+    background: #fcdb00;
+    color: #000;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 5px;
+    width: 126px;
+    border: 0;
+    padding: 5px 0;
+    cursor: pointer;
+    outline: none;
+}
+
+/*Подвал*/
+
+.footer{
+    background: #000;
+    padding: 50px 0 94px;
+}
+
+.info{
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    width: 184px;
+    margin: 0 auto;
+}
+
+.html5{
+    display: block;
+    margin: 5px auto 0;
+    width: 100px;
+    height: auto;
+}
+
+/*Медиа*/
+
+@media screen and (max-width: 992px){
+    .logo{
+        display: block;
+        margin: 0 auto;
+    }
+
+    .offer{
+        text-align:center;
+    }
+    .offer__text{
+        margin: 20px auto;
+        width: auto;
+    }
+
+    .form__input{
+        margin-right: 0;
+        width: 100%;
+    }
+    .menu__item a{
+        font-size: 14px;
+    }
+    .form__btn{
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .title__text{
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 576px){
+    .met{
+        width: 100%;
+    }
+
+    .menu{
+        flex-direction: column;
+    }
+
+    .menu__item{
+        text-align: center;
+        margin-bottom: 10px;
+    }
+}
